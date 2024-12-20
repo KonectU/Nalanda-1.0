@@ -80,11 +80,19 @@ const EmptyChatMessageInput = ({
           onChange={(e) => setMessage(e.target.value)}
           minRows={2}
           className="bg-transparent placeholder:text-black/50 dark:placeholder:text-white/50 text-sm text-black dark:text-white resize-none focus:outline-none w-full max-h-24 lg:max-h-36 xl:max-h-48"
-          placeholder="Ask anything..."
+          placeholder={
+            focusMode === "writingAssistant"
+              ? "Ask anything about SOP..."
+              : focusMode === "wolframAlphaSearch"
+              ? "Ask anything about Resume..."
+              : focusMode === "redditSearch"
+              ? "Ask anything about Colleges..."
+              : "Ask anything..."
+          }
         />
         <div className="flex flex-row items-center justify-between mt-4">
           <div className="flex flex-row items-center space-x-2 lg:space-x-4">
-            <Focus focusMode={focusMode} setFocusMode={setFocusMode} />
+            {/* <Focus focusMode={focusMode} setFocusMode={setFocusMode} /> */}
             <Attach
               fileIds={fileIds}
               setFileIds={setFileIds}

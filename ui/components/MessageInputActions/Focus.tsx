@@ -56,7 +56,7 @@ const focusModes = [
   {
     key: 'redditSearch',
     title: 'Reddit',
-    description: 'Search for discussions and opinions',
+    description: 'Chat with searching the web',
     icon: (
       <SiReddit
         className="h-5 w-auto mr-0.5"
